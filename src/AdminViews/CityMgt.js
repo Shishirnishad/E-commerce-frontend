@@ -8,7 +8,7 @@ function CityMgt() {
     const [ctlist, setCtList] = useState([]);
     const [stlist, setStList] = useState([]);
 
-    const BASE_URL = "http://localhost:9191";
+    const BASE_URL = process.env.REACT_APP_BASE_API_URL || "http://localhost:9191";
 
     useEffect(() => {
         axios.get(BASE_URL + "/state/show")

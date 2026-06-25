@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const BASE_URL = process.env.REACT_APP_BASE_API_URL || BASE_URL;
+
 function ProductMgt() {
     const [pcatgid, setPcatgid] = useState("");
     const [pcatgname, setPcatgname] = useState("");
