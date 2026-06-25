@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_API_URL || BASE_URL;
+const BASE_URL = process.env.REACT_APP_BASE_API_URL || "http://localhost:9191";
 
 function StateMgt() {
     const [stid, setStid] = useState("");
@@ -24,7 +24,7 @@ function StateMgt() {
             status: status
         };
 
-        axios.post("http://localhost:9191/state/save", obj)
+        axios.post(BASE_URL + "/state/save", obj)
             .then((res) => {
                 alert("Data Saved");
             })
@@ -34,7 +34,7 @@ function StateMgt() {
     };
 
     useEffect(() => {
-        axios.get("http://localhost:9191/state/getall")
+        axios.get(BASE_URL + "/state/getall")
             .then((res) => {
                 const nextStId = res.data.length + 1;
                 setStid(nextStId);
@@ -45,7 +45,7 @@ function StateMgt() {
     }, []);
 
     const handleShowButton = () => {
-        axios.get("http://localhost:9191/state/getall")
+        axios.get(BASE_URL + "/state/getall")
             .then((res) => {
                 setStlist(res.data);
             })
@@ -55,7 +55,7 @@ function StateMgt() {
     };
 
     const handleSearchButton = () => {
-        axios.get("http://localhost:9191/state/search/" + stid)
+        axios.get(BASE_URL + "/state/search/" + stid)
             .then((res) => {
                 setStname(res.data.stname);
                 setStlist([res.data]);
@@ -66,7 +66,7 @@ function StateMgt() {
     };
 
     const handleNewButton = () => {
-        axios.get("http://localhost:9191/state/getall")
+        axios.get(BASE_URL + "/state/getall")
             .then((res) => {
                 const nextStId = res.data.length + 1;
                 setStid(nextStId);
@@ -85,7 +85,7 @@ function StateMgt() {
             status: 1
         };
 
-        axios.put("http://localhost:9191/state/update", obj)
+        axios.put(BASE_URL + "/state/update", obj)
             .then((res) => {
                 alert("Data Updated");
                 setStname("");
@@ -96,7 +96,7 @@ function StateMgt() {
     };
 
     const handleDeleteButton = () => {
-        axios.delete("http://localhost:9191/state/delete/" + stid)
+        axios.delete(BASE_URL + "/state/delete/" + stid)
             .then((res) => {
                 alert("Data Deleted");
                 setStname("");

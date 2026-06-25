@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_API_URL || BASE_URL;
+const BASE_URL = process.env.REACT_APP_BASE_API_URL || "http://localhost:9191";
 
 function ProductMgt() {
     const [pcatgid, setPcatgid] = useState("");
@@ -9,7 +9,7 @@ function ProductMgt() {
     const [plist, setPlist] = useState([]);
 
     const getNextId = () => {
-        axios.get("http://localhost:9191/productcatg/showproductcatg")
+        axios.get(BASE_URL + "/productcatg/showproductcatg")
             .then((res) => {
                 const data = res.data;
 
@@ -41,7 +41,7 @@ function ProductMgt() {
 
     const handleSaveButton = () => {
         axios.post(
-            "http://localhost:9191/productcatg/addproductcatg/" +
+            BASE_URL + "/productcatg/addproductcatg/" +
             pcatgid +
             "/" +
             pcatgname
@@ -57,7 +57,7 @@ function ProductMgt() {
     };
 
     const handleShowButton = () => {
-        axios.get("http://localhost:9191/productcatg/showproductcatg")
+        axios.get(BASE_URL + "/productcatg/showproductcatg")
             .then((res) => {
                 setPlist(res.data);
             })
@@ -67,7 +67,7 @@ function ProductMgt() {
     };
 
     const handleSearchButton = () => {
-        axios.get("http://localhost:9191/productcatg/showproductcatg")
+        axios.get(BASE_URL + "/productcatg/showproductcatg")
             .then((res) => {
                 const data = res.data.filter(
                     item => Number(item.pcatgid) === Number(pcatgid)
@@ -87,7 +87,7 @@ function ProductMgt() {
 
     const handleUpdateButton = () => {
         axios.put(
-            "http://localhost:9191/productcatg/updateproductcatg/" +
+            BASE_URL + "/productcatg/updateproductcatg/" +
             pcatgid +
             "/" +
             pcatgname
@@ -102,7 +102,7 @@ function ProductMgt() {
 
     const handleDeleteButton = () => {
         axios.put(
-            "http://localhost:9191/productcatg/deleteproductcatg/" +
+            BASE_URL + "/productcatg/deleteproductcatg/" +
             pcatgid
         )
         .then((res) => {
