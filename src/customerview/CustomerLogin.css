@@ -1,0 +1,137 @@
+.customerlogin-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.customerlogin-form {
+  width: 420px;
+  background: var(--bg-white);
+  border-radius: 20px;
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md), var(--shadow-lg), var(--shadow-lg);
+  border: 1px solid rgba(255,255,255,0.8);
+  position: relative;
+  z-index: 1;
+  animation: formEnter 0.6s ease-out;
+}
+
+@keyframes formEnter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.customerlogin-title {
+  text-align: center;
+  color: var(--accent);
+  font-size: 28px;
+  margin-bottom: 36px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.customerlogin-form input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border);
+  outline: none;
+  border-radius: 12px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background: var(--bg-input);
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+  color: var(--text-primary);
+}
+
+.customerlogin-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.12), 0 4px 12px rgba(0,0,0,0.05);
+  background: var(--bg-white);
+}
+
+.password-field {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  font-size: 20px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.eye-icon:hover {
+  color: var(--accent);
+}
+
+.customerlogin-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover), var(--accent-dark));
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 153, 0, 0.3);
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.customerlogin-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 153, 0, 0.35);
+}
+
+.customerlogin-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.2);
+}
+
+.forgot-link {
+  display: block;
+  text-align: right;
+  margin-top: -12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.forgot-link:hover {
+  color: var(--accent);
+}
+
+@media(max-width:500px) {
+  .customerlogin-form {
+    width: 95%;
+    padding: 32px 24px;
+  }
+
+  .customerlogin-title {
+    font-size: 24px;
+  }
+}

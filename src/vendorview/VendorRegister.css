@@ -1,0 +1,175 @@
+.vendorreg-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.venderreg-form {
+  width: 560px;
+  padding: 40px;
+  border-radius: 20px;
+  background: var(--bg-white);
+  box-shadow: var(--shadow-md), var(--shadow-lg), var(--shadow-lg);
+  border: 1px solid rgba(255,255,255,0.8);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  animation: formEnter 0.6s ease-out;
+}
+
+@keyframes formEnter {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.venderreg-form h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--accent);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #e0d6cc;
+  outline: none;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-input);
+  transition: all 0.25s ease;
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.12), 0 4px 12px rgba(0,0,0,0.05);
+  background: var(--bg-white);
+}
+
+.form-group .error {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+  font-weight: 500;
+}
+
+.readonly {
+  display: block;
+  padding: 13px 16px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #6b7280;
+  font-weight: 500;
+  border: 1.5px solid #e0d6cc;
+}
+
+.password-field .input-with-icon {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.input-with-icon input {
+  flex: 1;
+}
+
+.eye-btn {
+  padding: 13px 16px;
+  background: var(--bg-input);
+  color: var(--accent);
+  border: 1px solid rgba(255, 153, 0, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+.eye-btn:hover {
+  background: rgba(255, 153, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.preview {
+  width: 90px;
+  height: 90px;
+  margin-top: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 153, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.form-group button[type="submit"] {
+  width: 100%;
+  margin-top: 12px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent), var(--accent-dark));
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(240, 136, 4, 0.3);
+  letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(240, 136, 4, 0.35);
+}
+
+.form-group button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+.status {
+  text-align: center;
+  color: #059669;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+@media(max-width:600px) {
+  .venderreg-form {
+    width: 95%;
+    padding: 28px 20px;
+  }
+
+  .venderreg-form h2 {
+    font-size: 22px;
+  }
+}

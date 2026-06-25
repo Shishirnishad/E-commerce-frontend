@@ -1,0 +1,173 @@
+.invoice-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--bg-primary);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.invoice-card {
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 36px;
+  background: var(--bg-white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md), var(--shadow-lg), var(--shadow-lg);
+  border: 1px solid rgba(255,255,255,0.8);
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  animation: cardIn 0.5s ease-out;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.invoice-card h2 {
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.invoice-card h4 {
+  color: var(--accent);
+  margin: 16px 0 8px;
+}
+
+.invoice-divider {
+  margin: 20px 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 153, 0, 0.15), transparent);
+}
+
+.invoice-card p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+.invoice-card strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.invoice-total {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent) !important;
+  margin: 16px 0;
+}
+
+.invoice-success {
+  color: #059669;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.invoice-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.invoice-pay-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover), var(--accent-dark));
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 6px 20px rgba(255, 153, 0, 0.3);
+}
+
+.invoice-pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 153, 0, 0.35);
+}
+
+.invoice-pay-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.invoice-secondary-btn {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+.invoice-secondary-btn:hover {
+  background: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+.invoice-qty-input {
+  padding: 10px 14px;
+  width: 80px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 16px;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.invoice-qty-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.12);
+}
+
+.invoice-qty-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #6b7280;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.invoice-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.invoice-btn-row button {
+  flex: 1;
+}
+
+@media(max-width:600px) {
+  .invoice-card {
+    padding: 24px 20px;
+  }
+
+  .invoice-btn-row {
+    flex-direction: column;
+  }
+}

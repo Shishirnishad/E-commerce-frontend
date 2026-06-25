@@ -1,0 +1,291 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 24px;
+  background: var(--bg-nav);
+  color: var(--nav-text);
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.1);
+  backdrop-filter: blur(12px);
+  min-height: 64px;
+}
+
+.navbar-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.navbar-brand {
+  margin-right: 8px;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--nav-text);
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, rgba(255,153,0,0.15), rgba(255,153,0,0.05));
+  border-radius: 8px;
+  border: 1px solid rgba(255,153,0,0.2);
+}
+
+.navbar-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--nav-text);
+  opacity: 0.5;
+  margin-right: 2px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--nav-text);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: rgba(255,255,255,0.04);
+  letter-spacing: 0.2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.navbar-link:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255,153,0,0.15);
+}
+
+.navbar-link.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(255,153,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.navbar-link.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(255,153,0,0.4);
+}
+
+.theme-toggle {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  transition: all 0.25s;
+  margin: 0;
+  backdrop-filter: blur(8px);
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.18);
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 4px 16px rgba(255,153,0,0.2);
+  border-color: var(--accent);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-user-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.user-menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 6px;
+  background: rgba(255,255,255,0.06);
+  color: var(--nav-text);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.user-menu-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,153,0,0.3);
+}
+
+.user-avatar-fallback {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  border: 2px solid rgba(255,153,0,0.2);
+}
+
+.user-avatar-fallback.customer {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff;
+}
+
+.user-avatar-fallback.vendor {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff;
+}
+
+.user-avatar-fallback.admin {
+  background: linear-gradient(135deg, var(--bg-subnav), #2a3a4e);
+  color: var(--accent);
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-arrow {
+  font-size: 10px;
+  margin-left: 4px;
+  opacity: 0.6;
+  color: var(--nav-text);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md), 0 20px 60px rgba(0,0,0,0.12);
+  min-width: 250px;
+  overflow: hidden;
+  z-index: 1000;
+  border: 1px solid var(--border);
+  animation: dropdownIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(20px);
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdown-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(255,153,0,0.04), transparent);
+}
+
+.dropdown-user-name {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.dropdown-user-role {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.15s;
+  font-weight: 500;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(135deg, rgba(255,153,0,0.06), transparent);
+  padding-left: 24px;
+}
+
+.dropdown-item-icon {
+  font-size: 18px;
+  width: 28px;
+  text-align: center;
+}
+
+.dropdown-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 14px 20px;
+  color: var(--danger);
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+
+.dropdown-logout:hover {
+  background: rgba(220, 38, 38, 0.06);
+  padding-left: 24px;
+}

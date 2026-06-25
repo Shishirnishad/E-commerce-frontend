@@ -1,0 +1,90 @@
+.ad-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ad-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.ad-slide.ad-active {
+  opacity: 1;
+}
+
+.ad-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ad-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.ad-overlay--dark {
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0.35) 60%,
+    rgba(0,0,0,0.75) 100%
+  );
+}
+
+.ad-overlay--light {
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.05) 40%,
+    rgba(0,0,0,0.05) 60%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+.ad-background--light .ad-slide {
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+.ad-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+}
+
+.ad-emoji {
+  font-size: 72px;
+  display: block;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.ad-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.ad-tagline {
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+  font-weight: 400;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
